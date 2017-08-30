@@ -10,8 +10,5 @@ class OpenWeatherMap
 	def LondonWeather
 		self.class.get("c36c2d908618d3da323a920b69d31d84")
 	end
-
 end 
 
-x = OpenWeatherMap.new 
-puts x.LondonWeather
