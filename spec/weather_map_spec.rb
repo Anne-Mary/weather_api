@@ -8,11 +8,11 @@ describe OpenWeatherMap do
 	end
 
 
-	#  it "the name key should not have the value of Japan" do
+	#  it "the name key should not have the value called Japan" do
 	# 	 expect(@weatherData['name']).to eq "Japan"  
 	#  end 
 
-	# it "the name key should have the value of a string called London" do 
+	# it "the name key should have the value called London" do 
 	# 	expect(@weatherData['name']).to eq "London"
 	# end 
 
@@ -34,9 +34,9 @@ describe OpenWeatherMap do
 	# 	end
 	# end
 
-	it "should have a " do 
-		expect(@weatherData['sys']["country"]).to eq "GB"
-	end 
+	# it "should have a weather country c " do 
+	# 	expect(@weatherData['sys']["country"]).to eq "GB"
+	# end 
 
 
 	# it "loop through the array" do
@@ -44,6 +44,14 @@ describe OpenWeatherMap do
 	# 		puts "#{key[:id]: #{key[:main]}"
 	# 	end
 	# end 
+
+	it "should have a key called main that contains a hash with a key called pressure and it should have value that is an integer" do
+		@weatherData["main"].each do |key,value| 
+			if key == "pressure"
+				expect(value.class).to be Integer
+			end
+		end
+	end
 
 
 
